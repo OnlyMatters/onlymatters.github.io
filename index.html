@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Only Matters LLC | Software & IT Consulting</title>
+  <meta name="description" content="Software architecture, cloud modernization, engineering leadership, DevOps, and product delivery consulting." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111c33;
+      --panel-2: #16243f;
+      --text: #e5edf8;
+      --muted: #a8b4c7;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 24px 80px rgba(0,0,0,.35);
+      --radius: 22px;
+      --max: 1120px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, .22), transparent 28rem),
+        radial-gradient(circle at 90% 0%, rgba(34, 197, 94, .15), transparent 26rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(15, 23, 42, .78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.1rem;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #60a5fa);
+      color: #06111f;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, .24);
+      border: 0;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+
+    .hero {
+      padding: 92px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.04);
+      font-size: .92rem;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 6px rgba(34,197,94,.13);
+    }
+
+    h1, h2, h3 { line-height: 1.1; margin: 0; letter-spacing: -.045em; }
+    h1 { font-size: clamp(2.7rem, 7vw, 5.8rem); max-width: 860px; }
+    h2 { font-size: clamp(2rem, 4vw, 3.1rem); margin-bottom: 18px; }
+    h3 { font-size: 1.18rem; margin-bottom: 8px; letter-spacing: -.02em; }
+
+    .lead {
+      margin: 24px 0 32px;
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .proof-card { padding: 26px; }
+    .proof-card strong { font-size: 2.35rem; display: block; letter-spacing: -.05em; }
+    .proof-card p { margin: 5px 0 0; color: var(--muted); }
+    .proof-list { display: grid; gap: 18px; margin-top: 20px; }
+
+    section { padding: 64px 0; }
+    .section-intro { max-width: 720px; color: var(--muted); margin: 0 0 28px; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      padding: 24px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      min-height: 220px;
+    }
+
+    .service p, .split p, .quote p { color: var(--muted); margin: 0; }
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(56,189,248,.13);
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel { padding: 30px; background: rgba(255,255,255,.045); border: 1px solid var(--line); border-radius: var(--radius); }
+    .checklist { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+    .checklist li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; color: var(--muted); }
+    .checklist b { color: var(--text); }
+    .check { color: var(--accent-2); font-weight: 900; }
+
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,.035);
+      font-size: .92rem;
+    }
+
+    .quote {
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(56,189,248,.12), rgba(34,197,94,.09));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .quote h2 { margin-bottom: 12px; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+    @media (max-width: 860px) {
+      .nav-links a:not(.button) { display: none; }
+      .hero { padding-top: 70px; }
+      .hero-grid, .split, .quote { grid-template-columns: 1fr; }
+      .services { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Primary navigation">
+        <a class="brand" href="#top">Only Matters<span>.</span></a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a class="button" href="mailto:eugene@onlymatters.com?subject=Consulting%20Inquiry">Book a consult</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Software & IT consulting for teams that need traction</div>
+          <h1>Senior engineering leadership without the full-time overhead.</h1>
+          <p class="lead">I help growing companies stabilize troubled systems, modernize cloud platforms, improve delivery, and turn ambiguous product needs into reliable software.</p>
+          <div class="hero-actions">
+            <a class="button" href="mailto:eugene@onlymatters.com?subject=Consulting%20Inquiry">Start the conversation</a>
+            <a class="button secondary" href="#services">Explore services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <h2>Consulting services</h2>
+        <p class="section-intro">Practical help for startups, SaaS companies, and small-to-mid-sized teams that need experienced technical judgment and hands-on execution.</p>
+        <div class="services">
+          <article class="service">
+            <div class="icon">01</div>
+            <h3>Fractional engineering leadership</h3>
+            <p>Team structure, delivery process, mentoring, hiring support, technical roadmaps, Scrum-to-Kanban transitions, and operating cadences for remote engineering teams.</p>
+          </article>
+          <article class="service">
+            <div class="icon">02</div>
+            <h3>Software architecture & modernization</h3>
+            <p>Domain-driven design, service decomposition, API design, technical debt reduction, platform rescue, and pragmatic refactoring plans that align with product priorities.</p>
+          </article>
+          <article class="service">
+            <div class="icon">03</div>
+            <h3>Cloud, DevOps & reliability</h3>
+            <p>AWS/GCP infrastructure, CI/CD pipelines, serverless systems, Kubernetes, monitoring-minded delivery, and cloud-native deployment practices.</p>
+          </article>
+          <article class="service">
+            <div class="icon">04</div>
+            <h3>Backend and API development</h3>
+            <p>Python/Django/Flask, Java/Spring, Node.js, RESTful microservices, SQL-backed systems, integrations, and scalable backend foundations.</p>
+          </article>
+          <article class="service">
+            <div class="icon">05</div>
+            <h3>Product delivery consulting</h3>
+            <p>Translate product goals into architecture, milestones, user stories, MVP scope, metrics-informed prioritization, and cross-functional delivery plans.</p>
+          </article>
+          <article class="service">
+            <div class="icon">06</div>
+            <h3>IT systems & integration strategy</h3>
+            <p>Evaluate vendors, connect third-party platforms, streamline operational workflows, and design event-driven integrations across cloud services and SaaS tools.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Only Matters LLC</span>
+      <span>New Jersey · <a href="mailto:eugene@onlymatters.com">Only Matters LLC</a></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear().toString();
+  </script>
+</body>
+</html>
